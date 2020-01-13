@@ -27,14 +27,14 @@ public class VilleServiceImpl implements IVilleService{
 	}
 
 	@Override
-	public Ville modifier(Long id) {
-		Ville villeModif = idao.findById(id).get();
-		return idao.save(villeModif);
+	public Ville modifier(Ville v) {
+		
+		return idao.save(v);
 	}
 
 	@Override
-	public boolean supprimer(Ville v) {
-		idao.delete(v);
+	public boolean supprimer(Long id) {
+		idao.deleteById(id);
 		return true;
 	}
 

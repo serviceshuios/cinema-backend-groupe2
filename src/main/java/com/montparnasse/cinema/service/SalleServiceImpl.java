@@ -23,14 +23,14 @@ public class SalleServiceImpl implements ISalleService{
 	
 
 	@Override
-	public Salle modifier(Long id) {
-		Salle salleModif = idao.findById(id).get();
-		return idao.save(salleModif);
+	public Salle modifier(Salle s) {
+		
+		return idao.save(s);
 	}
 
 	@Override
-	public boolean supprimer(Salle s) {
-		idao.delete(s);
+	public boolean supprimer(Long id) {
+		idao.deleteById(id);
 		return true;
 	}
 
