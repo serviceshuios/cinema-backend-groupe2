@@ -1,5 +1,7 @@
 package com.montparnasse.cinema.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,11 +20,7 @@ public class SalleServiceImpl implements ISalleService{
 		return idao.save(s);
 	}
 
-	@Override
-	public Salle get(Long id) {
-		// TODO Auto-generated method stub
-		return idao.findById(id).get();
-	}
+	
 
 	@Override
 	public Salle modifier(Salle s) {
@@ -34,6 +32,18 @@ public class SalleServiceImpl implements ISalleService{
 	public boolean supprimer(Salle s) {
 		idao.delete(s);
 		return true;
+	}
+
+	@Override
+	public Salle recuperer(Long id) {
+		// TODO Auto-generated method stub
+		return idao.findById(id).get();
+	}
+
+	@Override
+	public List<Salle> recupererTout() {
+		// TODO Auto-generated method stub
+		return idao.findAll();
 	}
 
 }
