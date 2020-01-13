@@ -27,14 +27,14 @@ public class CinemaServiceImpl implements ICinemaService{
 	}
 
 	@Override
-	public Cinema modifier(Long id) {
-		Cinema cinemaModif = idao.findById(id).get();
-		return idao.save(cinemaModif);
+	public Cinema modifier(Cinema c) {
+		
+		return idao.save(c);
 	}
 
 	@Override
-	public boolean supprimer(Cinema c) {
-		idao.delete(c);
+	public boolean supprimer(Long id) {
+		idao.deleteById(id);
 		return true;
 	}
 
