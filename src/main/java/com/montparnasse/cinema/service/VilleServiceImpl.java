@@ -41,7 +41,7 @@ public class VilleServiceImpl implements IVilleService{
 	@Override
 	public List<Ville> recupererTout() {
 		// TODO Auto-generated method stub
-		return null;
+		return idao.findAll();
 	}
 
 }
