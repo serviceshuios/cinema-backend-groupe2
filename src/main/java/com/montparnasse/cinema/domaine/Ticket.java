@@ -31,7 +31,7 @@ public class Ticket {
 
 	//Les gets/sets
 
-	public double getIdTicket() {
+	public long getIdTicket() {
 		return idTicket;
 	}
 
