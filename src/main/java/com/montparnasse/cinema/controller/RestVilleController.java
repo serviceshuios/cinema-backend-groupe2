@@ -17,7 +17,7 @@ import com.montparnasse.cinema.service.IVilleService;
 
 @CrossOrigin("*")
 @RestController
-public class VilleController {
+public class RestVilleController {
 
 	@Autowired
 	private IVilleService service;
