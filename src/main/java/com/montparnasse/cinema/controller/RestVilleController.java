@@ -41,7 +41,7 @@ public class RestVilleController {
 		return ville;
 	}
 
-	// ====== Recupérer une ville ========== //
+	// ====== Ajouter une ville ========== //
 
 	@RequestMapping(value = "/villes", method = RequestMethod.POST, produces = { MediaType.APPLICATION_JSON_VALUE })
 	@ResponseBody
