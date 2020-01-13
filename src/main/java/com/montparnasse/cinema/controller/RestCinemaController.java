@@ -18,6 +18,7 @@ import com.montparnasse.cinema.service.ICinemaService;
 @CrossOrigin("*")
 @RestController
 public class RestCinemaController {
+	
 	@Autowired
 	private ICinemaService service;
 
@@ -30,7 +31,7 @@ public class RestCinemaController {
 		return listeCinemas;
 	}
 
-	// ====== Recupérer une cinema ========== //
+	// ====== Recupérer un cinema ========== //
 
 	@RequestMapping(value = "/cinemas/{idCinema}", method = RequestMethod.GET, produces = {
 			MediaType.APPLICATION_JSON_VALUE })
@@ -40,7 +41,7 @@ public class RestCinemaController {
 		return cinema;
 	}
 
-	// ====== Recupérer une cinema ========== //
+	// ====== Ajouter un cinema ========== //
 
 	@RequestMapping(value = "/cinemas", method = RequestMethod.POST, produces = { MediaType.APPLICATION_JSON_VALUE })
 	@ResponseBody
@@ -48,7 +49,7 @@ public class RestCinemaController {
 		service.ajouter(c);
 	}
 
-	// ====== Modifier une cinema ========== //
+	// ====== Modifier un cinema ========== //
 
 	@RequestMapping(value = "/cinemas", method = RequestMethod.PUT, produces = { MediaType.APPLICATION_JSON_VALUE })
 	@ResponseBody

@@ -42,7 +42,7 @@ public class RestSalleController {
 		return salle;
 	}
 
-	// ====== Recupérer une salle ========== //
+	// ====== Ajouter une salle ========== //
 
 	@RequestMapping(value = "/salles", method = RequestMethod.POST, produces = { MediaType.APPLICATION_JSON_VALUE })
 	@ResponseBody
@@ -60,7 +60,7 @@ public class RestSalleController {
 
 	}
 
-	// ====== Supprimer un salle ========== //
+	// ====== Supprimer une salle ========== //
 
 	@RequestMapping(value = "/salles/{idSalle}", method = RequestMethod.DELETE, produces = {
 			MediaType.APPLICATION_JSON_VALUE })
