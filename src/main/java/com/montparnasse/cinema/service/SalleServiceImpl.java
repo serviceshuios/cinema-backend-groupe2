@@ -23,9 +23,9 @@ public class SalleServiceImpl implements ISalleService{
 	
 
 	@Override
-	public Salle modifier(Salle s) {
-		// TODO Auto-generated method stub
-		return idao.save(s);
+	public Salle modifier(Long id) {
+		Salle salleModif = idao.findById(id).get();
+		return idao.save(salleModif);
 	}
 
 	@Override

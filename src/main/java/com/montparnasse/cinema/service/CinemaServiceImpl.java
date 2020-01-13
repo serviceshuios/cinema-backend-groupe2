@@ -27,9 +27,9 @@ public class CinemaServiceImpl implements ICinemaService{
 	}
 
 	@Override
-	public Cinema modifier(Cinema c) {
-		// TODO Auto-generated method stub
-		return idao.save(c);
+	public Cinema modifier(Long id) {
+		Cinema cinemaModif = idao.findById(id).get();
+		return idao.save(cinemaModif);
 	}
 
 	@Override
