@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.montparnasse.cinema.dao.IFilmSalleDao;
 import com.montparnasse.cinema.domaine.FilmSalle;
+import com.montparnasse.cinema.domaine.FilmSalleId;
 
 
 
@@ -30,9 +31,14 @@ public class FilmSalleServiceImpl implements IFilmSalleService {
 	}//end ajouter
 
 	@Override
-	public FilmSalle recuperer(Long idFilmSalle) {
-		return filmSalleDao.findById(idFilmSalle).get();
+	public FilmSalle recuperer(FilmSalleId fsId) {
+		return filmSalleDao.findById(fsId).get();
 	}//end recuperer
+
+	@Override
+	public List<FilmSalle> recupererTout() {
+		return filmSalleDao.findAll();
+	}//end recupererTout
 
 	@Override
 	public FilmSalle modifier(FilmSalle fs) {
@@ -41,14 +47,10 @@ public class FilmSalleServiceImpl implements IFilmSalleService {
 	}//end modifier
 
 	@Override
-	public boolean supprimer(Long idFilmSalle) {
-		filmSalleDao.deleteById(idFilmSalle);
+	public boolean supprimer(FilmSalleId fsId) {
+		filmSalleDao.deleteById(fsId);
 		return true;
 	}//end supprimer
 
-	@Override
-	public List<FilmSalle> recupererTout() {
-		return filmSalleDao.findAll();
-	}//end recupererTout
 
 }//end class
