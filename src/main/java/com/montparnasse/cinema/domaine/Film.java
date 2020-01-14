@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  * Classe Film de la couche domaine
@@ -26,6 +27,12 @@ public class Film implements Serializable{
 	private String description;
 	private String photo;
 	private Date dateSortie;
+	
+	/*================= */
+	/*   Associations   */
+	/*================= */
+	@OneToOne
+	private Categorie categorie;
 	
 	/*__________________________________ getters / setters ____________________________________*/
 	public Long getIdFilm() {
