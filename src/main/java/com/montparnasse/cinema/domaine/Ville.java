@@ -7,6 +7,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * Classe Ville de la couche domaine
+ * @author IN-MP-019
+ *
+ */
 @Entity
 public class Ville implements Serializable{
 	
@@ -59,4 +64,4 @@ public class Ville implements Serializable{
 	
 	
 
-}
+}//end class

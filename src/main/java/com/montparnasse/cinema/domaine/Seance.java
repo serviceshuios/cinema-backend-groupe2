@@ -1,5 +1,6 @@
 package com.montparnasse.cinema.domaine;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -8,11 +9,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-//classe Seance de domaine
+/**
+ * Classe Seance de la couche domaine
+ * @author IN-MP-019
+ *
+ */
 @Entity
-public class Seance {
+public class Seance implements Serializable{
 	
-	//Les variables
+	/*__________________________________ Props ____________________________________*/
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idSeance")
@@ -22,7 +27,7 @@ public class Seance {
 	private Date heureDebut;
 
 	
-	//Les gets/sets
+	/*__________________________________ getters / setters ____________________________________*/
 	
 	public long getIdSeance() {
 		return idSeance;
@@ -41,4 +46,4 @@ public class Seance {
 	}
 
 
-}
+}//end class

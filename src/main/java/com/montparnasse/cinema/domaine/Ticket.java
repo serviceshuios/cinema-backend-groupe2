@@ -6,11 +6,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-//classe ticket de domaine
+/**
+ * Classe Ticket de la couche domaine
+ * @author IN-MP-019
+ *
+ */
 @Entity
 public class Ticket {
 	
-	//Les variables
+	/*__________________________________ Props ____________________________________*/
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idTicket")
@@ -29,7 +33,7 @@ public class Ticket {
 	private boolean reservee;
 	
 
-	//Les gets/sets
+	/*__________________________________ getters / setters ____________________________________*/
 
 	public long getIdTicket() {
 		return idTicket;
