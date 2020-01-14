@@ -1,13 +1,18 @@
 package com.montparnasse.cinema.domaine;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Classe Film de la couche domaine
@@ -19,7 +24,7 @@ public class Film implements Serializable{
 	
 	/*__________________________________ Props ____________________________________*/
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idFilm;
 	private String titre;
 	private double duree;
@@ -33,6 +38,10 @@ public class Film implements Serializable{
 	/*================= */
 	@OneToOne
 	private Categorie categorie;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "id.film")
+	private List<FilmSalle> filmSalles = new ArrayList<FilmSalle>();
 	
 	/*__________________________________ getters / setters ____________________________________*/
 	public Long getIdFilm() {

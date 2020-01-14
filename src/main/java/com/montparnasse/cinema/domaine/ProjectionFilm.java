@@ -29,6 +29,8 @@ public class ProjectionFilm implements Serializable{
 	private Date dateProjection;
 	private double prix;
 	
+	private FilmSalle filmSalle;
+	
 	/*================= */
 	/*   Associations   */
 	/*================= */

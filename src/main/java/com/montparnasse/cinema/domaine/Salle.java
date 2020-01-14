@@ -24,7 +24,7 @@ public class Salle implements Serializable {
 	//============ Proprietés =========== //
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
 	private int nombrePlaces;
@@ -38,6 +38,11 @@ public class Salle implements Serializable {
 	
 	@OneToOne
 	private Cinema cinema;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "id.salle")
+	private List<FilmSalle> filmSalles = new ArrayList<FilmSalle>();
+	
 	
 	//============ Getters/Setters =========== //
 	
