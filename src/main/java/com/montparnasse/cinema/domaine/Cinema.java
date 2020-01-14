@@ -92,6 +92,22 @@ public class Cinema implements Serializable {
 	public void setNombreSalles(int nombreSalles) {
 		this.nombreSalles = nombreSalles;
 	}
+
+	public List<Salle> getSalles() {
+		return salles;
+	}
+
+	public void setSalles(List<Salle> salles) {
+		this.salles = salles;
+	}
+
+	public Ville getVille() {
+		return ville;
+	}
+
+	public void setVille(Ville ville) {
+		this.ville = ville;
+	}
 	
 	
 	

@@ -86,5 +86,18 @@ public class Film implements Serializable{
 	public void setDateSortie(Date dateSortie) {
 		this.dateSortie = dateSortie;
 	}
+	public Categorie getCategorie() {
+		return categorie;
+	}
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}
+	public List<FilmSalle> getFilmSalles() {
+		return filmSalles;
+	}
+	public void setFilmSalles(List<FilmSalle> filmSalles) {
+		this.filmSalles = filmSalles;
+	}
+	
 		
 }//end class

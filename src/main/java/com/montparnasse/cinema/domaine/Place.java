@@ -92,5 +92,22 @@ public class Place implements Serializable{
 		this.altitude = altitude;
 	}
 
+	public Salle getSalle() {
+		return salle;
+	}
+
+	public void setSalle(Salle salle) {
+		this.salle = salle;
+	}
+
+	public List<Ticket> getTickets() {
+		return tickets;
+	}
+
+	public void setTickets(List<Ticket> tickets) {
+		this.tickets = tickets;
+	}
+	
+
 
 }//end class

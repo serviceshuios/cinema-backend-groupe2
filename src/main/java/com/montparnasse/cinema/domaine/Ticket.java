@@ -87,5 +87,25 @@ public class Ticket implements Serializable{
 		this.reservee = reservee;
 	}
 
+
+	public ProjectionFilm getProjectionFilm() {
+		return projectionFilm;
+	}
+
+
+	public void setProjectionFilm(ProjectionFilm projectionFilm) {
+		this.projectionFilm = projectionFilm;
+	}
+
+
+	public Place getPlace() {
+		return place;
+	}
+
+
+	public void setPlace(Place place) {
+		this.place = place;
+	}
+
 	
 }//end classe ticket de domaine

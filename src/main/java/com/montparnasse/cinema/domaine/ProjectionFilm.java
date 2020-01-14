@@ -59,6 +59,25 @@ public class ProjectionFilm implements Serializable{
 	}
 	public void setPrix(double prix) {
 		this.prix = prix;
+	}
+	public FilmSalle getFilmSalle() {
+		return filmSalle;
+	}
+	public void setFilmSalle(FilmSalle filmSalle) {
+		this.filmSalle = filmSalle;
+	}
+	public Seance getSeance() {
+		return seance;
+	}
+	public void setSeance(Seance seance) {
+		this.seance = seance;
+	}
+	public List<Ticket> getTickets() {
+		return tickets;
+	}
+	public void setTickets(List<Ticket> tickets) {
+		this.tickets = tickets;
 	}	
 		
+	
 }//end class

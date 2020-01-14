@@ -64,6 +64,24 @@ public class Salle implements Serializable {
 	public void setNombrePlaces(int nombrePlaces) {
 		this.nombrePlaces = nombrePlaces;
 	}
+	public List<Place> getPlaces() {
+		return places;
+	}
+	public void setPlaces(List<Place> places) {
+		this.places = places;
+	}
+	public Cinema getCinema() {
+		return cinema;
+	}
+	public void setCinema(Cinema cinema) {
+		this.cinema = cinema;
+	}
+	public List<FilmSalle> getFilmSalles() {
+		return filmSalles;
+	}
+	public void setFilmSalles(List<FilmSalle> filmSalles) {
+		this.filmSalles = filmSalles;
+	}
 	
 	
 

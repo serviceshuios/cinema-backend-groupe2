@@ -71,6 +71,12 @@ public class Ville implements Serializable{
 	public void setAltitude(double altitude) {
 		this.altitude = altitude;
 	}
+	public List<Cinema> getCinemas() {
+		return cinemas;
+	}
+	public void setCinemas(List<Cinema> cinemas) {
+		this.cinemas = cinemas;
+	}
 	
 	
 	
