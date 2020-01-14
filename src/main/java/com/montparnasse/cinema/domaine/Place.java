@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  * Classe Place de la couche domaine
@@ -14,7 +15,7 @@ import javax.persistence.Id;
 @Entity
 public class Place {
 	
-	//Les variables
+	/*__________________________________ Props ____________________________________*/
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idPlace")
@@ -32,8 +33,13 @@ public class Place {
 	@Column(name = " altitude")
 	private double altitude;
 	
+	/*================= */
+	/*   Associations   */
+	/*================= */
+	@OneToOne
+	private Salle salle;
 	
-	//Les gets/sets
+	/*__________________________________ getters / setters ____________________________________*/
 
 	public long getIdPlace() {
 		return idPlace;
@@ -76,4 +82,4 @@ public class Place {
 	}
 
 
-}
+}//end class

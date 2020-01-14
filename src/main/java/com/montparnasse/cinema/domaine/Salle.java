@@ -1,11 +1,16 @@
 package com.montparnasse.cinema.domaine;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /***
  * Classe Salle de la couche domaine
@@ -22,6 +27,13 @@ public class Salle implements Serializable {
 	private Long id;
 	private String name;
 	private int nombrePlaces;
+	
+	/*================= */
+	/*   Associations   */
+	/*================= */
+	@JsonIgnore
+	@OneToMany(mappedBy = "salle")
+	private List<Place> places = new ArrayList<Place>();
 	
 	//============ Getters/Setters =========== //
 	
@@ -46,4 +58,4 @@ public class Salle implements Serializable {
 	
 	
 
-}
+}//end class
