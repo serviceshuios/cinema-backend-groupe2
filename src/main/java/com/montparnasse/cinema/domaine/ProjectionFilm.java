@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * Classe ProjectionFilm de la couche domaine
  * @author IN-MP-019
@@ -33,6 +35,7 @@ public class ProjectionFilm implements Serializable{
 	@OneToOne
 	private Seance seance;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "projectionFilm")
 	private List<Ticket> tickets = new ArrayList<Ticket>();
 	
