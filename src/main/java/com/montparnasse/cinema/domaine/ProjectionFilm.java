@@ -1,12 +1,15 @@
 package com.montparnasse.cinema.domaine;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -29,6 +32,9 @@ public class ProjectionFilm implements Serializable{
 	/*================= */
 	@OneToOne
 	private Seance seance;
+	
+	@OneToMany(mappedBy = "projectionFilm")
+	private List<Ticket> tickets = new ArrayList<Ticket>();
 	
 	/*__________________________________ getters / setters ____________________________________*/
 	public Long getIdProjectionFilm() {

@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  * Classe Ticket de la couche domaine
@@ -34,6 +35,11 @@ public class Ticket implements Serializable{
 	@Column(name = "reservee")
 	private boolean reservee;
 	
+	/*================= */
+	/*   Associations   */
+	/*================= */
+	@OneToOne
+	private ProjectionFilm projectionFilm;
 
 	/*__________________________________ getters / setters ____________________________________*/
 
