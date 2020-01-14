@@ -40,11 +40,11 @@ public class RestFilmController {
 	}//end getFilms
 	
 	//lister un film
-	@RequestMapping(value = "/films/{idFilmA}", //
+	@RequestMapping(value = "/films/{idFilm}", //
 					method = RequestMethod.GET, //
 					produces = {MediaType.APPLICATION_JSON_VALUE})
 	@ResponseBody
-	public Film getFilm(@PathVariable("idFilmA") Long idFilm) {
+	public Film getFilm(@PathVariable("idFilm") Long idFilm) {
 		return filmService.recuperer(idFilm);
 	}//end getFilm
 	
@@ -67,11 +67,11 @@ public class RestFilmController {
 	}//end updateFilm
 	
 	//supprimer un film
-	@RequestMapping(value = "/films/{idFilmA}", //
+	@RequestMapping(value = "/films/{idFilm}", //
 					method = RequestMethod.DELETE, //
 					produces = {MediaType.APPLICATION_JSON_VALUE})
 	@ResponseBody
-	public boolean deleteFilm(@PathVariable("idFilmA") Long idFilm) {
+	public boolean deleteFilm(@PathVariable("idFilm") Long idFilm) {
 		return filmService.supprimer(idFilm);
 	}//end deleteFilm
 
