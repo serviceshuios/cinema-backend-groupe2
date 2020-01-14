@@ -2,6 +2,7 @@ package com.montparnasse.cinema.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.montparnasse.cinema.domaine.ProjectionFilm;
 
@@ -10,7 +11,7 @@ import com.montparnasse.cinema.domaine.ProjectionFilm;
  * @author IN-MP-019
  *
  */
-@org.springframework.transaction.annotation.Transactional
+@Transactional
 @Repository
 public interface IProjectionFilmDao extends JpaRepository<ProjectionFilm, Long> {
 
