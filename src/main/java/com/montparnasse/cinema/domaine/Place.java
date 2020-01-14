@@ -1,5 +1,7 @@
 package com.montparnasse.cinema.domaine;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +15,7 @@ import javax.persistence.OneToOne;
  *
  */
 @Entity
-public class Place {
+public class Place implements Serializable{
 	
 	/*__________________________________ Props ____________________________________*/
 	@Id
