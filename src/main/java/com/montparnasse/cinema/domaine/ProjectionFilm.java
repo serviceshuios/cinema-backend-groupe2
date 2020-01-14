@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  * Classe ProjectionFilm de la couche domaine
@@ -22,6 +23,12 @@ public class ProjectionFilm implements Serializable{
 	private Long idProjectionFilm;
 	private Date dateProjection;
 	private double prix;
+	
+	/*================= */
+	/*   Associations   */
+	/*================= */
+	@OneToOne
+	private Seance seance;
 	
 	/*__________________________________ getters / setters ____________________________________*/
 	public Long getIdProjectionFilm() {
