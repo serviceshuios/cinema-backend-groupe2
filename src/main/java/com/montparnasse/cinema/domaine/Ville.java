@@ -1,11 +1,16 @@
 package com.montparnasse.cinema.domaine;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Classe Ville de la couche domaine
@@ -26,6 +31,12 @@ public class Ville implements Serializable{
 	private double latitude;
 	private double altitude;
 	
+	/*================= */
+	/*   Associations   */
+	/*================= */
+	@JsonIgnore
+	@OneToMany(mappedBy = "ville")
+	private List<Cinema> cinemas = new ArrayList<Cinema>();
 	
 	//============ Getters/Setters =========== //
 	

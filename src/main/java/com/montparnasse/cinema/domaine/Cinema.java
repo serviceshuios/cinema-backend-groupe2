@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -37,6 +38,9 @@ public class Cinema implements Serializable {
 	@JsonIgnore
 	@OneToMany(mappedBy = "cinema")
 	private List<Salle> salles = new ArrayList<Salle>();
+	
+	@OneToOne
+	private Ville ville;
 	
 	
 	//============ Getters/Setters =========== //
