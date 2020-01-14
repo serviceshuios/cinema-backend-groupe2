@@ -1,13 +1,18 @@
 package com.montparnasse.cinema.domaine;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Classe Place de la couche domaine
@@ -40,6 +45,10 @@ public class Place implements Serializable{
 	/*================= */
 	@OneToOne
 	private Salle salle;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "place")
+	private List<Ticket> tickets = new ArrayList<Ticket>();
 	
 	/*__________________________________ getters / setters ____________________________________*/
 

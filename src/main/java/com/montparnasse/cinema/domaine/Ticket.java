@@ -40,6 +40,9 @@ public class Ticket implements Serializable{
 	/*================= */
 	@OneToOne
 	private ProjectionFilm projectionFilm;
+	
+	@OneToOne
+	private Place place;
 
 	/*__________________________________ getters / setters ____________________________________*/
 
