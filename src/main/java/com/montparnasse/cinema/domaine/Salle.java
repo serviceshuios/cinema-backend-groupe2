@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,6 +26,7 @@ public class Salle implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "Salle_Id", nullable = false)
 	private Long id;
 	private String name;
 	private int nombrePlaces;
@@ -37,12 +39,7 @@ public class Salle implements Serializable {
 	private List<Place> places = new ArrayList<Place>();
 	
 	@OneToOne
-	private Cinema cinema;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy = "id.salle")
-	private List<FilmSalle> filmSalles = new ArrayList<FilmSalle>();
-	
+	private Cinema cinema;	
 	
 	//============ Getters/Setters =========== //
 	
@@ -76,13 +73,6 @@ public class Salle implements Serializable {
 	public void setCinema(Cinema cinema) {
 		this.cinema = cinema;
 	}
-	public List<FilmSalle> getFilmSalles() {
-		return filmSalles;
-	}
-	public void setFilmSalles(List<FilmSalle> filmSalles) {
-		this.filmSalles = filmSalles;
-	}
-	
-	
 
+	
 }//end class

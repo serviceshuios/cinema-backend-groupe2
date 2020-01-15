@@ -5,12 +5,18 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -19,17 +25,19 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * @author IN-MP-019
  *
  */
+@Table(name = "ProjectionFilm", //
+uniqueConstraints = { //
+        @UniqueConstraint(name = "ProjectionFilm_UK", columnNames = { "Film_Id", "Salle_Id" }) })
 @Entity
 public class ProjectionFilm implements Serializable{
 	
 	/*__________________________________ Props ____________________________________*/
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "Id", nullable = false)
 	private Long idProjectionFilm;
 	private Date dateProjection;
 	private double prix;
-	
-	private FilmSalle filmSalle;
 	
 	/*================= */
 	/*   Associations   */
@@ -40,6 +48,15 @@ public class ProjectionFilm implements Serializable{
 	@JsonIgnore
 	@OneToMany(mappedBy = "projectionFilm")
 	private List<Ticket> tickets = new ArrayList<Ticket>();
+	
+	@ManyToOne
+    @JoinColumn(name = "Film_Id", nullable = false)
+    private Film film;
+ 
+	@ManyToOne
+    @JoinColumn(name = "Salle_Id", nullable = false)
+    private Salle salle;
+ 
 	
 	/*__________________________________ getters / setters ____________________________________*/
 	public Long getIdProjectionFilm() {
@@ -60,12 +77,6 @@ public class ProjectionFilm implements Serializable{
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
-	public FilmSalle getFilmSalle() {
-		return filmSalle;
-	}
-	public void setFilmSalle(FilmSalle filmSalle) {
-		this.filmSalle = filmSalle;
-	}
 	public Seance getSeance() {
 		return seance;
 	}
@@ -77,7 +88,19 @@ public class ProjectionFilm implements Serializable{
 	}
 	public void setTickets(List<Ticket> tickets) {
 		this.tickets = tickets;
+	}
+	public Film getFilm() {
+		return film;
+	}
+	public void setFilm(Film film) {
+		this.film = film;
+	}
+	public Salle getSalle() {
+		return salle;
+	}
+	public void setSalle(Salle salle) {
+		this.salle = salle;
 	}	
-		
+	
 	
 }//end class

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,6 +26,7 @@ public class Film implements Serializable{
 	/*__________________________________ Props ____________________________________*/
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "Film_Id", nullable = false)
 	private Long idFilm;
 	private String titre;
 	private double duree;
@@ -38,10 +40,6 @@ public class Film implements Serializable{
 	/*================= */
 	@OneToOne
 	private Categorie categorie;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy = "id.film")
-	private List<FilmSalle> filmSalles = new ArrayList<FilmSalle>();
 	
 	/*__________________________________ getters / setters ____________________________________*/
 	public Long getIdFilm() {
@@ -91,12 +89,6 @@ public class Film implements Serializable{
 	}
 	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
-	}
-	public List<FilmSalle> getFilmSalles() {
-		return filmSalles;
-	}
-	public void setFilmSalles(List<FilmSalle> filmSalles) {
-		this.filmSalles = filmSalles;
 	}
 	
 		
