@@ -45,8 +45,8 @@ public class RestVilleController {
 
 	@RequestMapping(value = "/villes", method = RequestMethod.POST, produces = { MediaType.APPLICATION_JSON_VALUE })
 	@ResponseBody
-	public void ajouter(@RequestBody Ville v) {
-		service.ajouter(v);
+	public Ville ajouter(@RequestBody Ville v) {
+		return service.ajouter(v);
 	}
 
 	// ====== Modifier une ville ========== //

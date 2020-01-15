@@ -45,8 +45,8 @@ public class RestCinemaController {
 
 	@RequestMapping(value = "/cinemas", method = RequestMethod.POST, produces = { MediaType.APPLICATION_JSON_VALUE })
 	@ResponseBody
-	public void ajouter(@RequestBody Cinema c) {
-		service.ajouter(c);
+	public Cinema ajouter(@RequestBody Cinema c) {
+		return service.ajouter(c);
 	}
 
 	// ====== Modifier un cinema ========== //

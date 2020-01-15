@@ -46,8 +46,8 @@ public class RestSalleController {
 
 	@RequestMapping(value = "/salles", method = RequestMethod.POST, produces = { MediaType.APPLICATION_JSON_VALUE })
 	@ResponseBody
-	public void ajouter(@RequestBody Salle s) {
-		service.ajouter(s);
+	public Salle ajouter(@RequestBody Salle s) {
+		return service.ajouter(s);
 	}
 
 	// ====== Modifier une salle ========== //
