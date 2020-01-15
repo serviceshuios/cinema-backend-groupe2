@@ -25,16 +25,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * @author IN-MP-019
  *
  */
-@Table(name = "ProjectionFilm", //
-uniqueConstraints = { //
-        @UniqueConstraint(name = "ProjectionFilm_UK", columnNames = { "Film_Id", "Salle_Id" }) })
+//@Table(name = "ProjectionFilm", //
+//uniqueConstraints = { 
+//        @UniqueConstraint(name = "ProjectionFilm_UK", columnNames = { "Film_Id", "Salle_Id" }) })
 @Entity
 public class ProjectionFilm implements Serializable{
 	
 	/*__________________________________ Props ____________________________________*/
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Id", nullable = false)
+	@Column(name = "Id")
 	private Long idProjectionFilm;
 	private Date dateProjection;
 	private double prix;
@@ -50,11 +50,11 @@ public class ProjectionFilm implements Serializable{
 	private List<Ticket> tickets = new ArrayList<Ticket>();
 	
 	@ManyToOne
-    @JoinColumn(name = "Film_Id", nullable = false)
+    @JoinColumn(name = "Film_Id")
     private Film film;
  
 	@ManyToOne
-    @JoinColumn(name = "Salle_Id", nullable = false)
+    @JoinColumn(name = "Salle_Id")
     private Salle salle;
  
 	
