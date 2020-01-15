@@ -47,7 +47,7 @@ public class RestCinemaController {
 	@ResponseBody
 	public Cinema ajouter(@RequestBody Cinema c) {
 		return service.ajouter(c);
-	}
+	}//end ajouter
 
 	// ====== Modifier un cinema ========== //
 

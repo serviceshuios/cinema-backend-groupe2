@@ -47,7 +47,7 @@ public class RestVilleController {
 	@ResponseBody
 	public Ville ajouter(@RequestBody Ville v) {
 		return service.ajouter(v);
-	}
+	}//end ajouter
 
 	// ====== Modifier une ville ========== //
 

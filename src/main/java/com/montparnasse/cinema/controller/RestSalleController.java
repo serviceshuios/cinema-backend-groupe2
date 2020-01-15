@@ -48,7 +48,7 @@ public class RestSalleController {
 	@ResponseBody
 	public Salle ajouter(@RequestBody Salle s) {
 		return service.ajouter(s);
-	}
+	}//end ajouter
 
 	// ====== Modifier une salle ========== //
 
