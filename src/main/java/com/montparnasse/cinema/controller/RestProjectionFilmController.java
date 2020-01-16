@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.montparnasse.cinema.domaine.Cinema;
 import com.montparnasse.cinema.domaine.ProjectionFilm;
 import com.montparnasse.cinema.service.IProjectionFilmService;
 
@@ -75,5 +76,15 @@ public class RestProjectionFilmController {
 	public boolean deleteProjectionFilm(@PathVariable("idProjectionFilmA") Long idProjectionFilm) {
 		return projectionFilmService.supprimer(idProjectionFilm);
 	}//end deleteProjectionFilm
+	
+	// ====== Liste des projections pour une salle donnée ========== //
+	@RequestMapping(value = "/projectionFilms/salles/{idSalleA}", 
+					method = RequestMethod.GET, 
+					produces = { MediaType.APPLICATION_JSON_VALUE })
+	@ResponseBody
+	public List<ProjectionFilm> recupererProjectionDeSalle(@PathVariable("idSalleA") Long idSalle) {
+		List<ProjectionFilm> listeProjections = projectionFilmService.rechercherParSalle(idSalle);
+		return listeProjections;
+	}
 
 }//end class

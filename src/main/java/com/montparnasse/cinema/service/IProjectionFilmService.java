@@ -1,5 +1,7 @@
 package com.montparnasse.cinema.service;
 
+import java.util.List;
+
 import com.montparnasse.cinema.domaine.ProjectionFilm;
 
 /**
@@ -9,5 +11,8 @@ import com.montparnasse.cinema.domaine.ProjectionFilm;
  *
  */
 public interface IProjectionFilmService extends IGeneriqueService<ProjectionFilm>{
+	
+	// methode permettant de selectionner les projections correspondant à une salle donnée
+	public List<ProjectionFilm> rechercherParSalle(Long idSalle);
 
 }//end interface

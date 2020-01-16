@@ -49,4 +49,9 @@ public class ProjectionFilmServiceImpl implements IProjectionFilmService{
 	public List<ProjectionFilm> recupererTout() {
 		return projectionFilmDao.findAll();
 	}//end recupererTout
+
+	@Override
+	public List<ProjectionFilm> rechercherParSalle(Long idSalle) {
+		return projectionFilmDao.findBySalleId(idSalle);
+	}//end rechercherParSalle
 }//end class
