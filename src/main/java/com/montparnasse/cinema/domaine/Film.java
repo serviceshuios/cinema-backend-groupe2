@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -38,7 +39,7 @@ public class Film implements Serializable{
 	/*================= */
 	/*   Associations   */
 	/*================= */
-	@OneToOne
+	@ManyToOne
 	private Categorie categorie;
 	
 	/*__________________________________ getters / setters ____________________________________*/

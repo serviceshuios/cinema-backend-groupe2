@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 /**
@@ -41,7 +42,7 @@ public class Ticket implements Serializable{
 	@OneToOne
 	private ProjectionFilm projectionFilm;
 	
-	@OneToOne
+	@ManyToOne
 	private Place place;
 
 	/*__________________________________ getters / setters ____________________________________*/
