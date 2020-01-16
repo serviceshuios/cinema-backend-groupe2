@@ -16,13 +16,11 @@ public class CinemaServiceImpl implements ICinemaService{
 	
 	@Override
 	public Cinema ajouter(Cinema c) {
-		// TODO Auto-generated method stub
 		return idao.save(c);
 	}
 
 	@Override
 	public Cinema recuperer(Long id) {
-		// TODO Auto-generated method stub
 		return idao.findById(id).get();
 	}
 
@@ -40,8 +38,12 @@ public class CinemaServiceImpl implements ICinemaService{
 
 	@Override
 	public List<Cinema> recupererTout() {
-		// TODO Auto-generated method stub
 		return idao.findAll();
 	}
 
-}
+	@Override
+	public List<Cinema> rechercherParVille(Long idVille) {
+		return idao.findByVilleId(idVille);
+	}//end rechercherParVille
+
+}// end class

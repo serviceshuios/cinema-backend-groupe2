@@ -69,5 +69,15 @@ public class RestCinemaController {
 		return service.supprimer(id);
 
 	}
+	
+	// ====== Liste des cinemas pour une ville donnée ========== //
+	@RequestMapping(value = "/villes/{idVilleA}/cinemas", 
+					method = RequestMethod.GET, 
+					produces = { MediaType.APPLICATION_JSON_VALUE })
+	@ResponseBody
+	public List<Cinema> recupererCinemasDeVille(@PathVariable("idVilleA") Long idVille) {
+		List<Cinema> listeCinemas = service.rechercherParVille(idVille);
+		return listeCinemas;
+	}
 
-}
+}//end controller
