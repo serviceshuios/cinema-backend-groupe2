@@ -16,7 +16,6 @@ public class SalleServiceImpl implements ISalleService{
 
 	@Override
 	public Salle ajouter(Salle s) {
-		// TODO Auto-generated method stub
 		return idao.save(s);
 	}
 
@@ -36,14 +35,19 @@ public class SalleServiceImpl implements ISalleService{
 
 	@Override
 	public Salle recuperer(Long id) {
-		// TODO Auto-generated method stub
 		return idao.findById(id).get();
 	}
 
 	@Override
 	public List<Salle> recupererTout() {
-		// TODO Auto-generated method stub
 		return idao.findAll();
 	}
 
-}
+
+
+	@Override
+	public List<Salle> rechercherParCinema(Long idCinema) {
+		return idao.findByCinemaId(idCinema);
+	}
+
+}//end class

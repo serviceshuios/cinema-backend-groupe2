@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.montparnasse.cinema.domaine.Cinema;
 import com.montparnasse.cinema.domaine.Salle;
 import com.montparnasse.cinema.service.ISalleService;
 
@@ -70,4 +71,14 @@ public class RestSalleController {
 		return service.supprimer(id);
 
 	}
-}
+	
+	// ====== Liste des salles pour un cinema donné ========== //
+	@RequestMapping(value = "/cinemas/{idCinemaA}/salles", 
+					method = RequestMethod.GET, 
+					produces = { MediaType.APPLICATION_JSON_VALUE })
+	@ResponseBody
+	public List<Salle> recupererSallesDeCinema(@PathVariable("idCinemaA") Long idCinema) {
+		List<Salle> listeSalles = service.rechercherParCinema(idCinema);
+		return listeSalles;
+	}//end recupererSallesDeCinema
+}//end controller
