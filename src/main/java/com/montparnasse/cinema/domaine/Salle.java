@@ -38,7 +38,7 @@ public class Salle implements Serializable {
 	@OneToMany(mappedBy = "salle")
 	private List<Place> places = new ArrayList<Place>();
 	
-	@OneToOne
+	@OneToMany
 	private Cinema cinema;	
 	
 	//============ Getters/Setters =========== //
