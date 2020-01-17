@@ -49,5 +49,10 @@ public class PlaceServiceImpl implements IPlaceService {
 			return placeDao.findAll();
 		}//end recupererTout
 
+		@Override
+		public List<Place> rechercherParSalle(Long idSalle) {
+			return placeDao.findBySalleId(idSalle);
+		}//end rechercherParSalle
+
 
 }//end dao

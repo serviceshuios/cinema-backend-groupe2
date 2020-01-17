@@ -1,5 +1,7 @@
 package com.montparnasse.cinema.service;
 
+import java.util.List;
+
 import com.montparnasse.cinema.domaine.Place;
 
 /**
@@ -9,5 +11,8 @@ import com.montparnasse.cinema.domaine.Place;
  *
  */
 public interface IPlaceService extends IGeneriqueService<Place>{
+	
+	// methode permettant de selectionner les places correspondant à une salle donnée
+	public List<Place> rechercherParSalle(Long idSalle);
 
 }//end interface

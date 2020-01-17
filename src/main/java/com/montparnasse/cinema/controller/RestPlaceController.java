@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.montparnasse.cinema.domaine.Cinema;
 import com.montparnasse.cinema.domaine.Place;
 import com.montparnasse.cinema.service.IPlaceService;
 
@@ -73,6 +74,16 @@ public class RestPlaceController {
 	public boolean deletePlace(@PathVariable("idPlaceA") Long idPlace) {
 		return placeService.supprimer(idPlace);
 	}//end deletePlace
+	
+	// ====== Liste des cinemas pour une ville donnée ========== //
+	@RequestMapping(value = "/places/salles/{idSalleA}", 
+					method = RequestMethod.GET, 
+					produces = { MediaType.APPLICATION_JSON_VALUE })
+	@ResponseBody
+	public List<Place> recupererPlacesDeSalle(@PathVariable("idSalleA") Long idSalle) {
+		List<Place> listePlaces = placeService.rechercherParSalle(idSalle);
+		return listePlaces;
+	}//end recupererPlacesDeSalle
 	
 
 }//end class
